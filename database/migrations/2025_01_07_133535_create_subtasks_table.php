@@ -13,9 +13,18 @@ return new class extends Migration
     {
         Schema::create('subtasks', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->IdTask();
+            $table->Name();
+            $table->Description();
+            $table->Status();
+            $table->CreatedAt();
+            $table->UpdatedAt();
+            $table->foreign('IdTask')->references('id')->on('tasks')->onDelete('cascade');
+            
         });
     }
+
+
 
     /**
      * Reverse the migrations.
