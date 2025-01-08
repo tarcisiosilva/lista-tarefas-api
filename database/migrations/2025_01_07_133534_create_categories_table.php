@@ -22,6 +22,19 @@ return new class extends Migration
             $table->foreign('IdUser')->references('id')->on('users')->onDelete('cascade');
 
         });
+
+        DB::table('categories')->insert(
+            [
+            'name' => 'trabalho',
+            'IdUser' => 1,
+            'Status' => 1
+            ],
+            [
+            'name' => 'eventos',
+            'IdUser' => 1,
+            'Status' => 1
+            ]
+        ); 
     }
 
     /**
